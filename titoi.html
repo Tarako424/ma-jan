@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>麻雀計算</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <form>
+    <div class="row justify-content-center mt-5  ml-2 mb-5">
+      <div class="w-5">
+        <input type="text" id="toitu1" class="w-5">
+      </div>
+      <div class="w-5">
+        <input type="text" id="toitu2">
+      </div>
+      <div class="w-5">
+        <input type="text" id="toitu3">
+      </div>
+      <div class="w-5">
+        <input type="text" id="toitu4">
+      </div>
+      <div class="w-5">
+        <input type="text" id="toitu5">
+      </div>
+      <div class="w-5">
+        <input type="text" id="toitu6">
+      </div>
+      <div class="w-5">
+        待ち
+        <input type="text" id="toitu7">
+      </div>
+      <div class="w-5">
+        上がり牌
+        <input type="text" id="toitu8" class="up">
+      </div>
+    </div>
+
+    <div id="modal-wrapper">
+      <div class="modal fade" id="whatUp" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body tumo" data-dismiss="modal">
+              <label>自摸</label>
+            </div>
+            <div class="modal-body ron" data-dismiss="modal">
+              <label>ロン</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-danger hai" >一萬</button>
+      <button type="button" class="btn btn-outline-danger hai">二萬</button>
+      <button type="button" class="btn btn-outline-danger hai">三萬</button>
+      <button type="button" class="btn btn-outline-danger hai">四萬</button>
+      <button type="button" class="btn btn-outline-danger hai">五萬</button>
+      <button type="button" class="btn btn-outline-danger hai">六萬</button>
+      <button type="button" class="btn btn-outline-danger hai">七萬</button>
+      <button type="button" class="btn btn-outline-danger hai" >八萬</button>
+      <button type="button" class="btn btn-outline-danger hai" >九萬</button>
+    </div>
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-success hai" >一索</button>
+      <button type="button" class="btn btn-outline-success hai">二索</button>
+      <button type="button" class="btn btn-outline-success hai">三索</button>
+      <button type="button" class="btn btn-outline-success hai">四索</button>
+      <button type="button" class="btn btn-outline-success hai">五索</button>
+      <button type="button" class="btn btn-outline-success hai">六索</button>
+      <button type="button" class="btn btn-outline-success hai">七索</button>
+      <button type="button" class="btn btn-outline-success hai" >八索</button>
+      <button type="button" class="btn btn-outline-success hai" >九索</button>
+    </div>
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-primary hai" >一筒</button>
+      <button type="button" class="btn btn-outline-primary hai">二筒</button>
+      <button type="button" class="btn btn-outline-primary hai">三筒</button>
+      <button type="button" class="btn btn-outline-primary hai">四筒</button>
+      <button type="button" class="btn btn-outline-primary hai">五筒</button>
+      <button type="button" class="btn btn-outline-primary hai">六筒</button>
+      <button type="button" class="btn btn-outline-primary hai">七筒</button>
+      <button type="button" class="btn btn-outline-primary hai" >八筒</button>
+      <button type="button" class="btn btn-outline-primary hai" >九筒</button>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <button type="button" class="btn btn-outline-secondary hai" >東</button>
+      <button type="button" class="btn btn-outline-secondary hai"  >南</button>
+      <button type="button" class="btn btn-outline-secondary hai">西</button>
+      <button type="button" class="btn btn-outline-secondary hai"  >北</button>
+      <button type="button" class="btn btn-outline-secondary hai"  >白</button>
+      <button type="button" class="btn btn-outline-secondary hai" >發</button>
+      <button type="button" class="btn btn-outline-secondary hai"  >中</button>
+    </div>
+    <div class="row justify-content-center">
+      <button type="button" class="btn-dark">クリア</button>
+      <button type="button" class="kokusiBtn btn btn-danger">国士無双</button>
+      <button type="button" class="normalBtn btn btn-secondary">通常選択画面に戻る</button>
+    </div>
+    <div class="row ml-2 mt-4">
+      <div id="disp_count" class="pl-3 pr-3">0</div>
+      <input type="button" value="ドラ数" id="btn_count_up" />
+      <input type="button" value="リセット" id="btn_reset" />
+       <p class="pl-2 mt-3">
+         <input type="checkbox" value="リーチ" name="check1">リーチ
+         <input type="checkbox" value="一発" name="check2">一発
+         <input type="checkbox" value="自摸" name="check3">面前清自摸和
+         <input type="checkbox" value="海底" name="check4">海底
+         <input type="checkbox" value="ダブリー" name="check7">ダブルリーチ
+       </p>
+     </div>
+    <div class="row justify-content-center">
+      <button type="button" class="btn-primary modal-open">決定</button>
+    </div>
+    <div id="modal-content">
+      
+      <p><a id="modal-close" class="button-link">閉じる</a></p>
+    </div>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

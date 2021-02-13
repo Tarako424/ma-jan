@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>麻雀計算</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <form>
+    <div class="row mt-5 mb-2">
+      <div>
+        <input type="text" id="hai1">
+      </div>
+      <div>
+        <input type="text" id="hai2">
+      </div>
+      <div>
+        <input type="text" id="hai3">
+      </div>
+      <div>
+        <input type="text" id="hai4">
+      </div>
+      <div>
+        <input type="text" id="hai5">
+      </div>
+      <div>
+        <input type="text" id="hai6">
+      </div>
+      <div>
+        <input type="text" id="hai7">
+      </div>
+      <div>
+        <input type="text" id="hai8">
+      </div>
+      <div>
+        <input type="text" id="hai9">
+      </div>
+      <div>
+        <input type="text" id="hai10">
+      </div>
+      <div>
+        <input type="text" id="hai11">
+      </div>
+      <div>
+        <input type="text" id="hai12">
+      </div>
+      <div>
+        <input type="text" id="hai13">
+      </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <div>
+        上がり牌
+        <input type="text" id="hai14" class="up">
+      </div>
+    </div>
+    <div id="modal-wrapper">
+      <div class="modal fade" id="whatUp" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body tumo" data-dismiss="modal">
+              <label>自摸</label>
+            </div>
+            <div class="modal-body ron" data-dismiss="modal">
+              <label>ロン</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-danger hai" >一萬</button>
+      <button type="button" class="btn btn-outline-danger hai jama" data-toggle="modal" data-target="#syupai27">二萬</button>
+      <button type="button" class="btn btn-outline-danger hai jama" data-toggle="modal" data-target="#syupai27">三萬</button>
+      <button type="button" class="btn btn-outline-danger hai jama" data-toggle="modal" data-target="#syupai27">四萬</button>
+      <button type="button" class="btn btn-outline-danger hai jama" data-toggle="modal" data-target="#syupai27">五萬</button>
+      <button type="button" class="btn btn-outline-danger hai jama" data-toggle="modal" data-target="#syupai27">六萬</button>
+      <button type="button" class="btn btn-outline-danger hai jama" data-toggle="modal" data-target="#syupai27">七萬</button>
+      <button type="button" class="btn btn-outline-danger hai jama" data-toggle="modal" data-target="#syupai8">八萬</button>
+      <button type="button" class="btn btn-outline-danger hai" >九萬</button>
+    </div>
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-success hai" >一索</button>
+      <button type="button" class="btn btn-outline-success hai jama" data-toggle="modal" data-target="#syupai27">二索</button>
+      <button type="button" class="btn btn-outline-success hai jama" data-toggle="modal" data-target="#syupai27">三索</button>
+      <button type="button" class="btn btn-outline-success hai jama" data-toggle="modal" data-target="#syupai27">四索</button>
+      <button type="button" class="btn btn-outline-success hai jama" data-toggle="modal" data-target="#syupai27">五索</button>
+      <button type="button" class="btn btn-outline-success hai jama" data-toggle="modal" data-target="#syupai27">六索</button>
+      <button type="button" class="btn btn-outline-success hai jama" data-toggle="modal" data-target="#syupai27">七索</button>
+      <button type="button" class="btn btn-outline-success hai jama" data-toggle="modal" data-target="#syupai8">八索</button>
+      <button type="button" class="btn btn-outline-success hai">九索</button>
+    </div>
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-primary hai">一筒</button>
+      <button type="button" class="btn btn-outline-primary hai jama" data-toggle="modal" data-target="#syupai27">二筒</button>
+      <button type="button" class="btn btn-outline-primary hai jama" data-toggle="modal" data-target="#syupai27">三筒</button>
+      <button type="button" class="btn btn-outline-primary hai jama" data-toggle="modal" data-target="#syupai27">四筒</button>
+      <button type="button" class="btn btn-outline-primary hai jama" data-toggle="modal" data-target="#syupai27">五筒</button>
+      <button type="button" class="btn btn-outline-primary hai jama" data-toggle="modal" data-target="#syupai27">六筒</button>
+      <button type="button" class="btn btn-outline-primary hai jama" data-toggle="modal" data-target="#syupai27">七筒</button>
+      <button type="button" class="btn btn-outline-primary hai jama" data-toggle="modal" data-target="#syupai8">八筒</button>
+      <button type="button" class="btn btn-outline-primary hai" >九筒</button>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <button type="button" class="btn btn-outline-secondary hai" id="ton" >東</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="nan" >南</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="sya" >西</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="pei">北</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="haku">白</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="hatu">發</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="tyun" >中</button>
+    </div>
+    <div class="row justify-content-center">
+      <button type="button" class="btn-dark">クリア</button>
+      <button type="button" class="titoiBtn btn btn-success">七対子</button>
+      <button type="button" class="normalBtn btn btn-secondary">通常選択画面に戻る</button>
+    </div>
+    <div class="row ml-2 mt-4 jama">
+      <div id="disp_count" class="pl-3 pr-3 jama">0</div>
+      <input type="button" value="ドラ数" id="btn_count_up"  class="jama" />
+      <input type="button" value="リセット" id="btn_reset" class="jama" />
+       <p class="pl-2 mt-3 jama">
+         <input type="checkbox" value="リーチ" name="check1" class="jama">リーチ
+         <input type="checkbox" value="一発" name="check2" class="jama">一発
+         <input type="checkbox" value="自摸" name="check3" class="jama">面前清自摸和
+         <input type="checkbox" value="海底" name="check4" class="jama">海底
+         <input type="checkbox" value="ダブリー" name="check7" class="jama">ダブルリーチ
+       </p>
+     </div>
+    <div class="row justify-content-center">
+      <button type="button" class="btn-primary modal-open">決定</button>
+    </div>
+    <div id="modal-content">
+      
+      <p><a id="modal-close" class="button-link">閉じる</a></p>
+    </div>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
