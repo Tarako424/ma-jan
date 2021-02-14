@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>麻雀計算</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <form>
+    <div class="container">
+
+      <div class="row mt-5 mb-2 ml-5 mr-5 justify-content-between">
+        <div class="col-12 col-sm-3">
+          面子１
+          <input type="text" class="hoge" name="input_number1" id="mentu1" maxlength="4">
+          
+        </div>
+        <div class="col-12 col-sm-3">
+          面子２
+          <input type="text" name="input_number6" id="mentu2" maxlength="4">
+        </div>
+        <div class="col-12 col-sm-3">
+          面子3
+          <input type="text" name="input_number3" id="mentu3">
+        </div>
+      </div>
+      <div class="row ml-5 mb-5 mr-5 justify-content-between">
+        <div class="col-12 col-sm-3">
+          雀頭、面子４
+          <input type="text" id="sparrow-head">
+        </div>
+        <div class="col-12 col-sm-3">
+          待ち
+          <input type="text" id="wait">
+        </div>
+        <div class="col-12col-sm-3">
+          上がり牌
+          <input type="text" id="up" class="up">
+        </div>
+      </div>
+    </div>
+      <div id="modal-wrapper">
+        <div class="modal fade" id="whatUp" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body tumo" data-dismiss="modal">
+                <label>自摸</label>
+              </div>
+            <div class="modal-body ron" data-dismiss="modal">
+              <label>ロン</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai1">一萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai27">二萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai27">三萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai27">四萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai27">五萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai27">六萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai27">七萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai8">八萬</button>
+      <button type="button" class="btn btn-outline-danger hai" data-toggle="modal" data-target="#syupai9">九萬</button>
+    </div>
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai1">一索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai27">二索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai27">三索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai27">四索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai27">五索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai27">六索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai27">七索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai8">八索</button>
+      <button type="button" class="btn btn-outline-success hai" data-toggle="modal" data-target="#syupai9">九索</button>
+    </div>
+    <div class="row justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai1">一筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai27">二筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai27">三筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai27">四筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai27">五筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai27">六筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai27">七筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai8">八筒</button>
+      <button type="button" class="btn btn-outline-primary hai" data-toggle="modal" data-target="#syupai9">九筒</button>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <button type="button" class="btn btn-outline-secondary hai" id="ton" data-toggle="modal" data-target="#zihai">東</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="nan" data-toggle="modal" data-target="#zihai">南</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="sya" data-toggle="modal" data-target="#zihai">西</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="pei" data-toggle="modal" data-target="#zihai">北</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="haku" data-toggle="modal" data-target="#zihai">白</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="hatu" data-toggle="modal" data-target="#zihai">發</button>
+      <button type="button" class="btn btn-outline-secondary hai" id="tyun" data-toggle="modal" data-target="#zihai">中</button>
+    </div>
+    <div class="row justify-content-center">
+      <button type="button" class="btn-dark">クリア</button>
+      <button type="button" class="kokusiBtn btn btn-danger">国士無双</button>
+      <button type="button" class="titoiBtn btn btn-success">七対子</button>
+    </div>
+    <div class="row ml-2 mt-4">
+     <div id="disp_count" class="pl-3 pr-3">0</div>
+     <input type="button" value="ドラ数" id="btn_count_up" />
+     <input type="button" value="リセット" id="btn_reset" />
+     
+     <div class="form-group ml-5">
+       <label for="select1a">場風</label>
+       <select id="select1a" class="form-control bakaze">
+         <option>-</option>
+         <option class="baton">東</option>
+         <option class="banan">南</option>
+         <option class="basya">西</option>
+         <option class="bape">北</option>
+       </select>
+     </div>
+     <div class="form-group ml-3">
+      <label for="select1b">自風</label>
+      <select id="select1b" class="form-control jikaze">
+        <option>-</option>
+        <option class="jiton">東</option>
+        <option class="jinan">南</option>
+        <option class="jisya">西</option>
+        <option class="jipe">北</option>
+      </select>
+     </div>
+      <p class="pl-2 mt-3">
+        <input type="checkbox" value="リーチ" name="check1">リーチ
+        <input type="checkbox" value="一発" name="check2">一発
+        <input type="checkbox" value="自摸" name="check3">面前清自摸和
+        <input type="checkbox" value="海底" name="check4">海底
+        <input type="checkbox" value="嶺上" name="check5">嶺上開花
+        <input type="checkbox" value="槍槓" name="check6">槍槓
+        <input type="checkbox" value="ダブリー" name="check7">ダブルリーチ
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <button type="button" class="btn-primary modal-open">決定</button>
+    </div>
+    <div id="modal-content">
+      
+      <p><a id="modal-close" class="button-link">閉じる</a></p>
+    </div>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
